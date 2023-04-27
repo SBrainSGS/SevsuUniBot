@@ -29,6 +29,10 @@ async def send_welcome(message: types.Message):
 @dp.callback_query_handler(lambda call: call.data in ["FAQ"])
 async def FAQ(call: types.CallbackQuery):
     kb = types.InlineKeyboardMarkup().row(types.InlineKeyboardButton(
+        text='Посетить сайт',
+        url='https://welcome.sevsu.ru/'
+    ))
+    kb.row(types.InlineKeyboardButton(
         text='Назад',
         callback_data='main'
     ))
